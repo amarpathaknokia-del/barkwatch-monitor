@@ -2,28 +2,14 @@
 
 ##############################################################################
 ##
-## Gradle start up script for UN*X
+## Gradle wrapper script
 ##
 ##############################################################################
 
-# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS=""
+DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-APP_NAME="Gradle"
-APP_BASE_NAME=$(basename "$0")
+CLASSPATH=$DIR/gradle/wrapper/gradle-wrapper.jar
 
-# Resolve links - $0 may be a link
-PRG="$0"
-while [ -h "$PRG" ] ; do
-  ls=$(ls -ld "$PRG")
-  link=$(expr "$ls" : '.*-> \(.*\)$')
-  if expr "$link" : '/.*' > /dev/null; then
-    PRG="$link"
-  else
-    PRG=$(dirname "$PRG")/"$link"
-  fi
-done
+JAVA_CMD="java"
 
-GRADLE_HOME=$(dirname "$PRG")/gradle
-
-exec "$GRADLE_HOME/bin/gradle" "$@"
+exec "$JAVA_CMD" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
